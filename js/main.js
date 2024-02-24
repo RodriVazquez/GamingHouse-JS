@@ -1,5 +1,5 @@
 
-// Para ingresar, la contraseña correcta es 1234 
+/* // Para ingresar, la contraseña correcta es 1234 
 let contraseña = "1234";
 let login = false; 
 
@@ -14,7 +14,7 @@ let cantidadProcesador = 0;
 let cantidadRam = 0;
 
 
-// funcion para logear 
+// funcion para logear. No hace falta cambiarla. 
 function logear () {
     for (let i=0; i <3; i++) {
         let contraseñaIgresada = prompt ("Por favor, escriba su clave");
@@ -27,7 +27,7 @@ function logear () {
         }
     }
     if (login == false) {
-        alert ("Máximo de intentos realizado. Se te enviará un mail para verificar tu identidad.")
+        alert ("Máximo de intentos realizado. Se te enviará un mail para verificar tu identidad.");
     }
 }
 
@@ -66,9 +66,48 @@ function comprar () {
             }
             
         } while (opcion != "x");
-        alert ("Usted va a comprar " + cantidadPC + " PC Gamer Armada(s), " + cantidadPlaca + " Placa(s) de video, " + cantidadProcesador + " Procesador(es) y " + cantidadRam + " Memoria(s) RAM." + " El total es U$D " + total + ". Gracias por elegirnos!")
+        alert ("Usted va a comprar " + cantidadPC + " PC Gamer Armada(s), " + cantidadPlaca + " Placa(s) de video, " + cantidadProcesador + " Procesador(es) y " + cantidadRam + " Memoria(s) RAM." + " El total es U$D " + total + ". Gracias por elegirnos!");
     }
-}
+} */
 
-logear()
-comprar()
+
+
+const productos = [
+    {id: 1, producto: "PC Gamer armada", precio: 3000},
+    {id: 2, producto: "PS5", precio: 2500},
+    {id: 3, producto: "Procesador", precio: 1000},
+    {id: 4, producto: "Memoria RAM", precio: 200},
+    {id: 5, producto: "Joystick", precio: 500},
+    {id: 6, producto: "Placa de video", precio: 1500},
+    {id: 7, producto: "Fuente de alimentación", precio: 800},
+    {id: 8, producto: "Disco sólido", precio: 200},
+    {id: 9, producto: "Silla Gamer", precio: 300},
+    {id: 10, producto: "Monitor", precio: 1200},
+];
+
+
+let precio = parseInt(prompt("Ingrese el precio máximo que está dispuesto a pagar por un solo producto. Le mostraremos las opciones disponibles:"));
+function filtrar (arr, precio) {
+    const productoFiltrado = arr.filter (producto => producto.precio <= precio);
+    return productoFiltrado;
+    }
+
+let precioFiltrado = filtrar(productos, precio);
+
+
+console.log(precioFiltrado);
+let mensaje;
+function mostrarProdFiltrados (arr) {
+    mensaje = "Productos disponibles:\n"
+    arr.forEach(prodFiltrado => { 
+        mensaje += prodFiltrado.id + "- " + prodFiltrado.producto + " - Precio: " + prodFiltrado.precio + "\n";
+    });
+    return mensaje
+}
+mostrarProdFiltrados(precioFiltrado)
+alert("Elija el producto que desea escribiendo su número: \n\n" + mensaje); // ACA HAY QUE MECHAR CON LA FN COMPRAR. Quizás esto puede ir dentro del do..while, vinculado con las nuevas fn y el arr. 
+
+
+
+// logear();
+// comprar();
