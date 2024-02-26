@@ -105,9 +105,61 @@ function mostrarProdFiltrados (arr) {
     return mensaje
 }
 mostrarProdFiltrados(precioFiltrado)
-alert("Elija el producto que desea escribiendo su número: \n\n" + mensaje); // ACA HAY QUE MECHAR CON LA FN COMPRAR. Quizás esto puede ir dentro del do..while, vinculado con las nuevas fn y el arr. 
 
 
+let productoElegido;
+function comprar (){
+    let total = 0;
+    let cantidad = 0;
 
+    do {
+        productoElegido = prompt("Elija el producto que desea escribiendo su número: \n\n" + mensaje + "\n Para salir, ingrese X");
+        let productoEncontrado = precioFiltrado.find ((producto) => {
+            return producto.id == productoElegido
+        })
+        if (productoEncontrado && productoEncontrado.id === parseInt(productoElegido)) {
+                alert ("Usted eligió: " + productoEncontrado.producto)
+                cantidad = prompt ("Cúantos desea comprar?")
+                total += cantidad * productoEncontrado.precio
+            } else if (productoEncontrado == "x"){
+                break;
+            }else if (productoElegido != "x") {
+                alert ("Ingrese una opción válida")
+            } 
+        }
+        while (productoElegido != "x");
+        alert(total)
+    }
 // logear();
-// comprar();
+comprar(); 
+
+
+
+
+
+// AL PARECER YA FUNCIONA. VAMOS A VER COMO TERMINA. BUEN AVANCE ! 
+
+
+
+
+
+
+    /*  if (login) {
+        let opcion;
+        let total = 0;
+
+
+    const perro = animales.find((animal) => {
+    //     return animal === "Perro";
+    // })
+
+
+
+        do {
+            opcion = prompt(mensaje + "Ingrese el número del producto que desea comprar");
+            
+            if (opcion == mostrarProdFiltrados.id) {
+                alert (mostrarProdFiltrados.id + " cuesta " + mostrarProdFiltrados.precio + " U$D.")
+                let cantidad = prompt ("Cuántos desea comprar?")
+                total += cantidad * mostrarProdFiltrados.id
+            } */
