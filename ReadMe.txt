@@ -1,7 +1,7 @@
-El simulador se basa en 2 funciones. Logear y Comprar. 
+El simulador se basa en una funcion de logear que nos permite el acceso a todo el programa. En caso de que el usuario no logee correctamente, no se ejecutará el programa. 
 
 En la primer funcion la idea es lograr que el usuario solo pueda ingresar si tipea la contraseña correcta (la cual es 1234) y que tenga un máximo de 3 intentos antes de que se le envíe un mail para verificar su identidad. 
 
-En la segunda funcion la idea es lograr que el usuario acumule la cantidad de productos que desee, luego salir de la zona de compra y por último mostrarle un resumen completo de su compra. 
+Resumidamente: El usuario intenta logea, si logra hacerlo va a poder filtrar los productos por precio, ver los productos que cumplan con su filtro, elegir cuáles y cuántos comprar y al final ver un resumen de su compra. CADA UNO DE ESTOS PASOS ESTÁ HECHO CON FUNCIONES. 
 
-También, como detalle, agregue un background-color en el body para que el blanco no moleste tanto a la vista! :)
+Dejé muchos comentarios en el código para que sea más sencillo de entender ! :)
